@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ▼要差し替え: タイトル・説明・URL -->
-    <title>Kashiwa Yoshiaki</title>
-    <meta name="description" content="柏善昭のプロフィールサイト。経歴、できること、実績、連絡先をまとめています。" />
-    <meta property="og:title" content="Kashiwa Yoshiaki" />
-    <meta property="og:description" content="柏善昭のプロフィールサイト。" />
+    <title>柏 善昭 | Kashiwa Yoshiaki</title>
+    <meta name="description" content="柏善昭（かしわ よしあき）のプロフィールサイト。株式会社コンティキ 取締役副社長 / アートディレクター。経歴と連絡先。" />
+    <meta property="og:title" content="柏 善昭 | Kashiwa Yoshiaki" />
+    <meta property="og:description" content="株式会社コンティキ 取締役副社長 / アートディレクター。柏善昭のプロフィールサイト。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kashiwayoshiaki.github.io/mypage/" />
     <!-- <meta property="og:image" content="https://example.com/ogp.png" /> -->
@@ -250,7 +249,7 @@
 
       .timeline li {
         display: grid;
-        grid-template-columns: 92px 1fr;
+        grid-template-columns: 168px 1fr;
         gap: 20px;
         padding: 14px 0;
         border-bottom: 1px solid var(--border);
@@ -273,7 +272,7 @@
         font-size: 0.9rem;
       }
 
-      @media (max-width: 560px) {
+      @media (max-width: 640px) {
         .timeline li {
           grid-template-columns: 1fr;
           gap: 2px;
@@ -413,8 +412,6 @@
         <a class="site-header__name" href="#top">Kashiwa Yoshiaki</a>
         <nav class="nav">
           <a href="#about">About</a>
-          <a href="#skills">Can Do</a>
-          <a href="#works">Works</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -425,23 +422,19 @@
       <section class="hero">
         <img class="avatar" src="images/profile.jpg" width="88" height="88" alt="" />
 
-        <!-- ▼要差し替え: 漢字表記 -->
         <h1>柏 善昭</h1>
-        <p class="hero__romaji">Kashiwa Yoshiaki</p>
+        <p class="hero__romaji">KASHIWA YOSHIAKI</p>
 
-        <!-- ▼要差し替え: 肩書き・所属（3秒で「何をしている人か」が伝わる一行） -->
-        <p class="hero__role">〇〇株式会社 / 〇〇職</p>
+        <p class="hero__role">株式会社コンティキ / 取締役副社長 / アートディレクター</p>
 
-        <!-- ▼要差し替え: 一言プロフィール（100〜200字。経歴より「今の関心」を書くと効く） -->
         <p class="hero__lead">
-          ここに一言プロフィールを書きます。何に取り組んでいて、どんなことに関心があるのか、
-          どんな相談を歓迎するのかを2〜3文で。初対面の相手が読む前提で、
-          専門用語は控えめにするのがおすすめです。
+          1977年生まれ。IMAGICA、インフォバーンで、UI/UXデザイナー、アートディレクター、
+          WEBディレクター、プロジェクトマネージャーまでを経験。株式会社こんくりを立ち上げ、
+          2024年にコンティキと適格合併。
         </p>
 
         <div class="hero__actions">
           <a class="btn btn--primary" href="#contact">連絡する</a>
-          <a class="btn btn--ghost" href="#works">実績を見る</a>
         </div>
       </section>
 
@@ -449,88 +442,50 @@
       <section id="about">
         <h2>About</h2>
 
-        <!-- ▼要差し替え: プロフィール本文 -->
-        <p>
-          ここに自己紹介の本文を書きます。ヒーローの一言プロフィールより少し詳しく、
-          これまでの流れと現在地を4〜6文程度で。
-        </p>
-
-        <!-- ▼要差し替え: 略歴。不要なら <ul> ごと削除 -->
         <ul class="timeline">
           <li>
-            <time>2020 —</time>
+            <time>2025年6月 —</time>
             <div>
-              <h3>〇〇株式会社</h3>
-              <p>担当業務を一行で。</p>
+              <h3>株式会社コンティキ</h3>
+              <p>COO / Web Designer / Art Director</p>
             </div>
           </li>
           <li>
-            <time>2016 — 2020</time>
+            <time>2016年11月 — 2025年5月</time>
             <div>
-              <h3>〇〇株式会社</h3>
-              <p>担当業務を一行で。</p>
+              <h3>株式会社こんくり</h3>
+              <p>CEO / Web Designer / Art Director</p>
             </div>
           </li>
           <li>
-            <time>2016</time>
+            <time>2014年4月 — 2017年5月</time>
             <div>
-              <h3>〇〇大学 〇〇学部 卒業</h3>
+              <h3>コクリエ（cocrea）</h3>
+              <p>CEO / Web Designer / Art Director</p>
+            </div>
+          </li>
+          <li>
+            <time>2010年9月 — 2014年4月</time>
+            <div>
+              <h3>salvo Inc.</h3>
+              <p>Web Director / Web Designer / Art Director</p>
+            </div>
+          </li>
+          <li>
+            <time>2006年4月 — 2010年8月</time>
+            <div>
+              <h3>インフォバーン（INFOBAHN）</h3>
+              <p>Web Director / Web Designer / Art Director</p>
+            </div>
+          </li>
+          <li>
+            <time>2003年4月 — 2006年3月</time>
+            <div>
+              <h3>株式会社IMAGICA DC21</h3>
+              <p>Designer</p>
             </div>
           </li>
         </ul>
-      </section>
-
-      <!-- ============ できること ============ -->
-      <section id="skills">
-        <h2>Can Do</h2>
-
-        <!-- ▼要差し替え: 提供できる価値を3つ程度 -->
-        <div class="cards">
-          <div class="card">
-            <h3>できること その1</h3>
-            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
-          </div>
-          <div class="card">
-            <h3>できること その2</h3>
-            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
-          </div>
-          <div class="card">
-            <h3>できること その3</h3>
-            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
-          </div>
-        </div>
-
-        <!-- ▼要差し替え: スキル・使用ツール。不要なら削除 -->
-        <ul class="tags" style="margin-top: 20px">
-          <li>スキル1</li>
-          <li>スキル2</li>
-          <li>スキル3</li>
-          <li>スキル4</li>
-        </ul>
-      </section>
-
-      <!-- ============ 実績 ============ -->
-      <section id="works">
-        <h2>Works</h2>
-
-        <!-- ▼要差し替え: 実績3〜5件。href を実URLに。リンクが無いものは <a class="card"> を <div class="card"> に -->
-        <div class="cards">
-          <a class="card" href="#" target="_blank" rel="noopener">
-            <p class="card__meta">2025 / カテゴリ</p>
-            <h3>プロジェクト名</h3>
-            <p>何をして、どうなったのかを1〜2文で。数字が出せると強い。</p>
-          </a>
-          <a class="card" href="#" target="_blank" rel="noopener">
-            <p class="card__meta">2024 / カテゴリ</p>
-            <h3>プロジェクト名</h3>
-            <p>何をして、どうなったのかを1〜2文で。</p>
-          </a>
-          <div class="card">
-            <p class="card__meta">2023 / カテゴリ</p>
-            <h3>プロジェクト名</h3>
-            <p>公開リンクが無い実績はこの形式で。</p>
-          </div>
-        </div>
       </section>
 
       <!-- ============ 連絡先 ============ -->
@@ -540,7 +495,6 @@
         <ul class="contact-list">
           <li>
             <span class="label">Email</span>
-            <!-- ▼要確認: 公開するとスパム収集の対象になり得ます（後述の代替案あり） -->
             <a href="mailto:kashiwa@kontiki.co.jp">kashiwa@kontiki.co.jp</a>
           </li>
           <li>
@@ -548,15 +502,6 @@
             <a href="https://github.com/Kashiwayoshiaki" target="_blank" rel="noopener">
               github.com/Kashiwayoshiaki
             </a>
-          </li>
-          <!-- ▼要差し替え: 使っていないものは <li> ごと削除 -->
-          <li>
-            <span class="label">X</span>
-            <a href="#" target="_blank" rel="noopener">@your_id</a>
-          </li>
-          <li>
-            <span class="label">LinkedIn</span>
-            <a href="#" target="_blank" rel="noopener">linkedin.com/in/your-id</a>
           </li>
         </ul>
       </section>
