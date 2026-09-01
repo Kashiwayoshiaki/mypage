@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ▼要差し替え: タイトル・説明・URL -->
+    <title>Kashiwa Yoshiaki</title>
+    <meta name="description" content="柏好明のプロフィールサイト。経歴、できること、実績、連絡先をまとめています。" />
+    <meta property="og:title" content="Kashiwa Yoshiaki" />
+    <meta property="og:description" content="柏好明のプロフィールサイト。" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="https://kashiwayoshiaki.github.io/mypage/" /> -->
+    <!-- <meta property="og:image" content="https://example.com/ogp.png" /> -->
+
+    <style>
+      /* ===== デザイントークン ===== */
+      :root {
+        --bg: #fbfaf8;
+        --surface: #ffffff;
+        --text: #16151a;
+        --text-muted: #605c6b;
+        --border: #e5e1da;
+        --accent: #2f5d54;
+        --accent-soft: #e8f0ed;
+        --radius: 12px;
+        --maxw: 720px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14141a;
+          --surface: #1c1c24;
+          --text: #f0eeea;
+          --text-muted: #a5a1af;
+          --border: #2e2e38;
+          --accent: #7fbfae;
+          --accent-soft: #1e2b28;
+        }
+      }
+
+      /* ===== ベース ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        /* 固定ヘッダー分のアンカー位置調整 */
+        scroll-padding-top: 72px;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ===== ヘッダー ===== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .site-header__inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .site-header__name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .nav {
+        display: flex;
+        gap: 20px;
+        font-size: 0.85rem;
+      }
+
+      .nav a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .nav a:hover {
+        color: var(--accent);
+      }
+
+      /* 狭い画面ではナビを隠す（1ページなのでスクロールで到達可能） */
+      @media (max-width: 560px) {
+        .nav {
+          display: none;
+        }
+      }
+
+      /* ===== レイアウト ===== */
+      main {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px 96px;
+      }
+
+      section {
+        padding: 56px 0 8px;
+        border-top: 1px solid var(--border);
+      }
+
+      section:first-of-type {
+        border-top: none;
+      }
+
+      h2 {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 28px;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 0 0 4px;
+      }
+
+      p {
+        margin: 0 0 1.2em;
+      }
+
+      /* ===== ヒーロー ===== */
+      .hero {
+        padding: 72px 0 64px;
+      }
+
+      .avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        margin-bottom: 28px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        border: 1px solid var(--border);
+      }
+      /* ▼写真に差し替える場合は上の .avatar div を次で置換:
+         <img class="avatar" src="images/profile.jpg" alt="柏好明" /> */
+
+      .hero h1 {
+        font-size: clamp(1.9rem, 6vw, 2.6rem);
+        line-height: 1.3;
+        margin: 0 0 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .hero__romaji {
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin: 0 0 20px;
+      }
+
+      .hero__role {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 0 0 14px;
+      }
+
+      .hero__lead {
+        color: var(--text-muted);
+        margin: 0 0 32px;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 11px 22px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.15s, background 0.15s;
+      }
+
+      .btn--primary {
+        background: var(--accent);
+        color: var(--bg);
+      }
+
+      .btn--primary:hover {
+        opacity: 0.85;
+      }
+
+      .btn--ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      .btn--ghost:hover {
+        background: var(--surface);
+      }
+
+      /* ===== 略歴（タイムライン） ===== */
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .timeline li {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 20px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .timeline li:last-child {
+        border-bottom: none;
+      }
+
+      .timeline time {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-variant-numeric: tabular-nums;
+        padding-top: 2px;
+      }
+
+      .timeline p {
+        margin: 2px 0 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 560px) {
+        .timeline li {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+      }
+
+      /* ===== カード ===== */
+      .cards {
+        display: grid;
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px 24px;
+      }
+
+      .card p {
+        margin: 6px 0 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* 実績カードはリンク全体をクリック可能に */
+      a.card {
+        text-decoration: none;
+        display: block;
+        transition: border-color 0.15s, transform 0.15s;
+      }
+
+      a.card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .card__meta {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+
+      /* ===== スキルタグ ===== */
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tags li {
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 5px 13px;
+        border-radius: 999px;
+      }
+
+      /* ===== 連絡先 ===== */
+      .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 2px;
+      }
+
+      .contact-list li {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 20px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.92rem;
+      }
+
+      .contact-list li:last-child {
+        border-bottom: none;
+      }
+
+      .contact-list dt,
+      .contact-list .label {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      .contact-list a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        word-break: break-all;
+      }
+
+      .contact-list a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 560px) {
+        .contact-list li {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+      }
+
+      /* ===== フッター ===== */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 24px 40px;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+      }
+
+      /* 印刷時（名刺として渡す場面を想定） */
+      @media print {
+        .site-header,
+        .hero__actions {
+          display: none;
+        }
+        body {
+          background: #fff;
+          color: #000;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__name" href="#top">Kashiwa Yoshiaki</a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#skills">Can Do</a>
+          <a href="#works">Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ============ ヒーロー ============ -->
+      <section class="hero">
+        <!-- ▼要差し替え: 顔写真を使う場合は <img class="avatar" src="images/profile.jpg" alt="柏好明" /> に置換 -->
+        <div class="avatar" aria-hidden="true">KY</div>
+
+        <!-- ▼要差し替え: 漢字表記 -->
+        <h1>柏 好明</h1>
+        <p class="hero__romaji">Kashiwa Yoshiaki</p>
+
+        <!-- ▼要差し替え: 肩書き・所属（3秒で「何をしている人か」が伝わる一行） -->
+        <p class="hero__role">〇〇株式会社 / 〇〇職</p>
+
+        <!-- ▼要差し替え: 一言プロフィール（100〜200字。経歴より「今の関心」を書くと効く） -->
+        <p class="hero__lead">
+          ここに一言プロフィールを書きます。何に取り組んでいて、どんなことに関心があるのか、
+          どんな相談を歓迎するのかを2〜3文で。初対面の相手が読む前提で、
+          専門用語は控えめにするのがおすすめです。
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact">連絡する</a>
+          <a class="btn btn--ghost" href="#works">実績を見る</a>
+        </div>
+      </section>
+
+      <!-- ============ プロフィール ============ -->
+      <section id="about">
+        <h2>About</h2>
+
+        <!-- ▼要差し替え: プロフィール本文 -->
+        <p>
+          ここに自己紹介の本文を書きます。ヒーローの一言プロフィールより少し詳しく、
+          これまでの流れと現在地を4〜6文程度で。
+        </p>
+
+        <!-- ▼要差し替え: 略歴。不要なら <ul> ごと削除 -->
+        <ul class="timeline">
+          <li>
+            <time>2020 —</time>
+            <div>
+              <h3>〇〇株式会社</h3>
+              <p>担当業務を一行で。</p>
+            </div>
+          </li>
+          <li>
+            <time>2016 — 2020</time>
+            <div>
+              <h3>〇〇株式会社</h3>
+              <p>担当業務を一行で。</p>
+            </div>
+          </li>
+          <li>
+            <time>2016</time>
+            <div>
+              <h3>〇〇大学 〇〇学部 卒業</h3>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ できること ============ -->
+      <section id="skills">
+        <h2>Can Do</h2>
+
+        <!-- ▼要差し替え: 提供できる価値を3つ程度 -->
+        <div class="cards">
+          <div class="card">
+            <h3>できること その1</h3>
+            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
+          </div>
+          <div class="card">
+            <h3>できること その2</h3>
+            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
+          </div>
+          <div class="card">
+            <h3>できること その3</h3>
+            <p>どんな相談に応えられるかを1〜2文で具体的に。</p>
+          </div>
+        </div>
+
+        <!-- ▼要差し替え: スキル・使用ツール。不要なら削除 -->
+        <ul class="tags" style="margin-top: 20px">
+          <li>スキル1</li>
+          <li>スキル2</li>
+          <li>スキル3</li>
+          <li>スキル4</li>
+        </ul>
+      </section>
+
+      <!-- ============ 実績 ============ -->
+      <section id="works">
+        <h2>Works</h2>
+
+        <!-- ▼要差し替え: 実績3〜5件。href を実URLに。リンクが無いものは <a class="card"> を <div class="card"> に -->
+        <div class="cards">
+          <a class="card" href="#" target="_blank" rel="noopener">
+            <p class="card__meta">2025 / カテゴリ</p>
+            <h3>プロジェクト名</h3>
+            <p>何をして、どうなったのかを1〜2文で。数字が出せると強い。</p>
+          </a>
+          <a class="card" href="#" target="_blank" rel="noopener">
+            <p class="card__meta">2024 / カテゴリ</p>
+            <h3>プロジェクト名</h3>
+            <p>何をして、どうなったのかを1〜2文で。</p>
+          </a>
+          <div class="card">
+            <p class="card__meta">2023 / カテゴリ</p>
+            <h3>プロジェクト名</h3>
+            <p>公開リンクが無い実績はこの形式で。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 連絡先 ============ -->
+      <section id="contact">
+        <h2>Contact</h2>
+
+        <ul class="contact-list">
+          <li>
+            <span class="label">Email</span>
+            <!-- ▼要確認: 公開するとスパム収集の対象になり得ます（後述の代替案あり） -->
+            <a href="mailto:kashiwa@kontiki.co.jp">kashiwa@kontiki.co.jp</a>
+          </li>
+          <li>
+            <span class="label">GitHub</span>
+            <a href="https://github.com/Kashiwayoshiaki" target="_blank" rel="noopener">
+              github.com/Kashiwayoshiaki
+            </a>
+          </li>
+          <!-- ▼要差し替え: 使っていないものは <li> ごと削除 -->
+          <li>
+            <span class="label">X</span>
+            <a href="#" target="_blank" rel="noopener">@your_id</a>
+          </li>
+          <li>
+            <span class="label">LinkedIn</span>
+            <a href="#" target="_blank" rel="noopener">linkedin.com/in/your-id</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>© 2026 Kashiwa Yoshiaki</footer>
+  </body>
+</html>
