@@ -176,8 +176,10 @@
         letter-spacing: 0.04em;
         border: 1px solid var(--border);
       }
-      /* ▼写真に差し替える場合は上の .avatar div を次で置換:
-         <img class="avatar" src="images/profile.jpg" alt="柏善昭" /> */
+      img.avatar {
+        display: block;
+        object-fit: cover;
+      }
 
       .hero h1 {
         font-size: clamp(1.9rem, 6vw, 2.6rem);
@@ -421,8 +423,7 @@
     <main id="top">
       <!-- ============ ヒーロー ============ -->
       <section class="hero">
-        <!-- ▼要差し替え: 顔写真を使う場合は <img class="avatar" src="images/profile.jpg" alt="柏善昭" /> に置換 -->
-        <div class="avatar" aria-hidden="true">KY</div>
+        <img class="avatar" src="images/profile.jpg" width="88" height="88" alt="" />
 
         <!-- ▼要差し替え: 漢字表記 -->
         <h1>柏 善昭</h1>
